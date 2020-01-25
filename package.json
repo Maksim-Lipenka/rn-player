@@ -1,0 +1,47 @@
+{
+  "name": "@randomdotcom/rn-player",
+  "version": "0.0.1",
+  "description": "A cross-platform video player with customizable controls for React Native",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"no test specified\""
+  },
+  "homepage": "https://github.com/randomdotcom/rn-player#readme",
+  "bugs": "https://github.com/randomdotcom/rn-player/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/randomdotcom/rn-player.git"
+  },
+  "keywords": [
+    "react native",
+    "expo",
+    "video controls",
+    "react-native",
+    "react-native-video",
+    "react-native-video-controls",
+    "expo-video",
+    "expo-video-player",
+    "react-native-video-player"
+  ],
+  "author": "Maksim Lipenka <maksim.lipenka@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^1.19.1",
+    "@expo/vector-icons": ">=10.0.0",
+    "@babel/runtime": "^7.8.3",
+    "@react-native-community/netinfo": ">=4.6.0",
+    "react": "16.9.0",
+    "expo-av": ">=8"
+  },
+  "peerDependencies": {
+    "react-native": ">=0.60.0",
+    "@expo/vector-icons": ">=10.0.0"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "singleQuote": true,
+    "jsxBracketSameLine": true,
+    "printWidth": 120
+  }
+}

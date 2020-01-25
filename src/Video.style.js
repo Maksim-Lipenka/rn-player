@@ -1,0 +1,75 @@
+import { StyleSheet } from 'react-native';
+
+export default StyleSheet.create({
+  container: {
+    backgroundColor: '#000',
+    alignItems: 'center',
+    width: '100%',
+  },
+  videoContainer: { alignItems: 'center', width: '100%' },
+  controlsWrapper: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 4,
+  },
+  bottomControlsContainer: {
+    height: 30,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    paddingHorizontal: 8,
+  },
+  topControlsContainer: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 8,
+  },
+  topRightControlsContainer: {
+    flexDirection: 'row',
+  },
+  textStyle: {
+    color: '#eee',
+    width: 38,
+  },
+  positionText: { marginRight: 8 },
+  durationText: { marginRight: 8 },
+  titleStyle: {
+    color: '#eee',
+    fontSize: 16,
+  },
+  iconFixStyle: {
+    marginBottom: -4,
+  },
+  slider: { marginRight: 10, marginLeft: 2, flex: 1 },
+  qualityButton: { zIndex: 1, marginLeft: 4 },
+  qualitySelectorContainer: {
+    position: 'absolute',
+    backgroundColor: '#f1f1f1',
+    width: 110,
+    right: 0,
+    marginTop: -2,
+    marginRight: -2,
+    borderRadius: 4,
+    paddingLeft: 10,
+    paddingBottom: 2,
+    flexDirection: 'row',
+  },
+  qualitySelectorLeftSide: { alignItems: 'center' },
+  qualitySelectorTitleContainer: { height: 38, justifyContent: 'center' },
+  qualitySelectorTitle: { fontWeight: 'bold' },
+  qualitiesList: { alignItems: 'flex-end' },
+  qualityItem: { fontSize: 16, paddingBottom: 8 },
+  qualitySelectorRightSide: {
+    marginLeft: 19,
+    marginTop: 34,
+    marginBottom: 2,
+    width: 1,
+    backgroundColor: '#1f1f1f',
+  },
+});
