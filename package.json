@@ -38,7 +38,9 @@
   },
   "peerDependencies": {
     "@expo/vector-icons": ">=10.0.0",
-    "react-native": ">=0.60.0"
+    "react-native": ">=0.60.0",
+    "expo-av": ">=8",
+    "@react-native-community/netinfo": ">=4.6.0"
   },
   "prettier": {
     "trailingComma": "all",
