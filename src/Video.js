@@ -1,5 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { View, TouchableOpacity, Text, TouchableWithoutFeedback, Slider, Animated, FlatList } from 'react-native';
+import {
+  View,
+  TouchableOpacity,
+  Text,
+  TouchableWithoutFeedback,
+  Slider,
+  Animated,
+  FlatList,
+  ActivityIndicator,
+} from 'react-native';
 import { useNetInfo } from '@react-native-community/netinfo';
 import { Video as ExpoVideo, Audio } from 'expo-av';
 import { Feather, MaterialCommunityIcons as Material } from '@expo/vector-icons';
@@ -17,6 +26,7 @@ const defaultSettingsIcon = isQualitySelectorVisible => (
     style={styles.iconFixStyle}
   />
 );
+const defaultActivityIndicator = <ActivityIndicator />;
 
 const ControlStates = {
   Shown: 'Show',
@@ -310,6 +320,7 @@ export default props => {
     maximizeIcon = defaultMaximizeIcon,
     pauseIcon = defaultPauseIcon,
     playIcon = defaultPlayIcon,
+    acitivityIndicator = defaultActivityIndicator,
     settingsIcon = defaultSettingsIcon(isQualitySelectorVisible),
     sliderProps,
     sliderStyles,
@@ -392,6 +403,9 @@ export default props => {
               {playbackState === PlaybackStates.Paused && (
                 <TouchableOpacity onPress={togglePlay}>{playIcon}</TouchableOpacity>
               )}
+              {(playbackState === PlaybackStates.Buffering || playbackState === PlaybackStates.Loading) && {
+                acitivityIndicator,
+              }}
               <View style={[styles.bottomControlsContainer]}>
                 {/* Current time display */}
                 <Text style={[styles.textStyle, styles.positionText, positionTextStyles]}>
