@@ -335,13 +335,18 @@ export default props => {
   const keyExtractor = item => String(item.id);
 
   const renderQualityItem = ({ item, index }) => (
-    <TouchableOpacity keyExtractor={keyExtractor} onPress={() => setSelectedQualiy(index)}>
+    <TouchableOpacity onPress={() => setSelectedQualiy(index)}>
       <Text style={[styles.qualityItem, selectedQuality === index && { color: '#52aee5' }]}>{item.quality}</Text>
     </TouchableOpacity>
   );
 
   const renderQualitiesList = () => (
-    <FlatList data={sourcesList} renderItem={renderQualityItem} contentContainerStyle={styles.qualitiesList} />
+    <FlatList
+      keyExtractor={keyExtractor}
+      data={sourcesList}
+      renderItem={renderQualityItem}
+      contentContainerStyle={styles.qualitiesList}
+    />
   );
 
   return (
@@ -403,9 +408,8 @@ export default props => {
               {playbackState === PlaybackStates.Paused && (
                 <TouchableOpacity onPress={togglePlay}>{playIcon}</TouchableOpacity>
               )}
-              {(playbackState === PlaybackStates.Buffering || playbackState === PlaybackStates.Loading) && {
-                acitivityIndicator,
-              }}
+              {(playbackState === PlaybackStates.Buffering || playbackState === PlaybackStates.Loading) &&
+                acitivityIndicator}
               <View style={[styles.bottomControlsContainer]}>
                 {/* Current time display */}
                 <Text style={[styles.textStyle, styles.positionText, positionTextStyles]}>
