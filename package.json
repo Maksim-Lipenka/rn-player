@@ -1,6 +1,6 @@
 {
   "name": "@randomdotcom/rn-player",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A cross-platform video player with customizable controls for React Native",
   "main": "index.js",
   "scripts": {
@@ -29,16 +29,16 @@
   "author": "Maksim Lipenka <maksim.lipenka@gmail.com>",
   "license": "ISC",
   "devDependencies": {
-    "prettier": "^1.19.1",
-    "@expo/vector-icons": ">=10.0.0",
     "@babel/runtime": "^7.8.3",
+    "@expo/vector-icons": ">=10.0.0",
     "@react-native-community/netinfo": ">=4.6.0",
-    "react": "16.9.0",
-    "expo-av": ">=8"
+    "expo-av": ">=8",
+    "prettier": "^1.19.1",
+    "react": "16.9.0"
   },
   "peerDependencies": {
-    "react-native": ">=0.60.0",
-    "@expo/vector-icons": ">=10.0.0"
+    "@expo/vector-icons": ">=10.0.0",
+    "react-native": ">=0.60.0"
   },
   "prettier": {
     "trailingComma": "all",
