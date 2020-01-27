@@ -1,6 +1,8 @@
 # rn-player
 A cross-platform video player with customizable controls for React Native.
 
+![](preview.gif)
+
 ## Installation
 `yarn add @randomdotcom/rn-player` or `npm i --save @randomdotcom/rn-player`
 
