@@ -122,3 +122,33 @@ video props from example
   url: "https://vimeo.com/226958858",
 }
 ```
+## Props
+
+| prop        | type           | description  |
+| :------------- |:-------------:| :-----|
+| title      | String | A title of the video on the top left |
+| preview      | Image source      |   A poster of the video, `'http://path/to/image'` |
+| defaultSource* | Video source      |    Default source of the video, `'http://path/to/video'`  |
+| sources | Array<{quality, url}: {String, String}>      |    Additional sources of the video, `[{quality: "1080p", url: 'http://path/to/video'}, {quality: "720p", uri: 'http://path/to/video'}]`  |
+| width* | Number |    Width of the video, pass Dimensions.get('window').width  |
+| height | Number |    Default calculating from video width: width * 0.563  |
+| inFullscreen | Boolean |    Is video in fullscreen? Needs to support fullscreen mode |
+| onFullscreenOn | Function |   Function that changes inFullscreen prop |
+| onFullscreenOff | Function |    Function that changes inFullscreen prop |
+| topControlsAdditionalComponent | Component |    Additional component on the top right |
+| bottomControlsAdditionalComponent | Component |    Additional component on the bottom right |
+| minimizeIcon | Component |    Custom icon  |
+| maximizeIcon | Component |    Custom icon  |
+| pauseIcon | Component |    Custom icon  |
+| playIcon | Component |    Custom icon  |
+| replayIcon | Component |    Custom icon  |
+| settingsIcon | Component |    Custom icon  |
+| acitivityIndicator | Component |    Custom activity indicator  |
+| sliderProps | SliderProps |      |
+| sliderStyles | StyleObj |      |
+| durationTextStyles | StyleObj |      |
+| positionTextStyles | StyleObj |      |
+| titleStyles | StyleObj |      |
+
+Inherits [VideoProps](https://docs.expo.io/versions/latest/sdk/video/#props)
+
