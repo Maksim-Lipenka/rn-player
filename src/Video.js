@@ -18,6 +18,7 @@ const defaultMinimizeIcon = <Feather name={'minimize-2'} color="#eee" size={26} 
 const defaultMaximizeIcon = <Feather name={'maximize-2'} color="#eee" size={26} />;
 const defaultPauseIcon = <Material name="pause" size={60} color="white" />;
 const defaultPlayIcon = <Material name="play" size={60} color="white" />;
+const defaultReplayIcon = <Material name="replay" size={60} color="white" />;
 const defaultSettingsIcon = isQualitySelectorVisible => (
   <Material
     name="settings"
@@ -115,6 +116,18 @@ export default props => {
     const shouldPlay = playbackState !== PlaybackStates.Playing;
     if (playbackInstance !== null) {
       playbackInstance.current.setStatusAsync({ shouldPlay });
+    }
+  };
+
+  const replay = async () => {
+    if (playbackInstance !== null) {
+      await playbackInstance.current.setStatusAsync({
+        shouldPlay: true,
+        positionMillis: 0,
+      });
+
+      // Update playbackState to get out of Ended state
+      setPlaybackState(PlaybackStates.Playing);
     }
   };
 
@@ -320,6 +333,7 @@ export default props => {
     maximizeIcon = defaultMaximizeIcon,
     pauseIcon = defaultPauseIcon,
     playIcon = defaultPlayIcon,
+    replayIcon = defaultReplayIcon,
     acitivityIndicator = defaultActivityIndicator,
     settingsIcon = defaultSettingsIcon(isQualitySelectorVisible),
     sliderProps,
@@ -407,6 +421,9 @@ export default props => {
               )}
               {playbackState === PlaybackStates.Paused && (
                 <TouchableOpacity onPress={togglePlay}>{playIcon}</TouchableOpacity>
+              )}
+              {playbackState === PlaybackStates.Ended && (
+                <TouchableOpacity onPress={replay}>{replayIcon}</TouchableOpacity>
               )}
               {(playbackState === PlaybackStates.Buffering || playbackState === PlaybackStates.Loading) &&
                 acitivityIndicator}
